@@ -68,17 +68,11 @@ return prepareSubjects.map((subject) => subject[0].toUpperCase() + subject.slice
 console.log(getStudentsNames(students));
 
 // function 5
-const getBestStudent = (students) => {
-  const arrayOfAverageMarks = students.map((students) => [students.name, getAverageMark(students)]);
-  let bestStudent = ['', 0]
-  for (let i = 0; i < arrayOfAverageMarks.length; i++) {
-    if (arrayOfAverageMarks[i][1] > bestStudent[1]) {
-      bestStudent = arrayOfAverageMarks[i];
-    }
-  } 
-  return bestStudent[0];  
-};
-
+getBestStudent = (students) => {
+  const allStudentInfo = students.map((student) => getStudentInfo(student));
+  const sortedStudents = allStudentInfo.sort((a, b) => b.averageMark - a.averageMark);
+  return sortedStudents[0].name;
+  }
 console.log(getBestStudent(students));
 
 // function 6
