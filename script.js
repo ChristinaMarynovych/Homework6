@@ -53,10 +53,7 @@ return prepareSubjects.map((subject) => subject[0].toUpperCase() + subject.slice
   console.log(getAverageMark(students[2]));
 
   // function 3
-  const getStudentInfo = (students) => {
-    const information = {course: students.course, name: students.name, averageMark: (getAverageMark(students))};
-    return information;
-  };
+  const getStudentInfo = (students) =>{course: students.course, name: students.name, averageMark: (getAverageMark(students))}
   console.log(getStudentInfo(students[0]));
   console.log(getStudentInfo(students[1]));
   console.log(getStudentInfo(students[2]));
